@@ -62,8 +62,9 @@
   --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Headings - prioritize Wednesday, fallback to Bebas Neue (Google Fonts), then Georgia */
 h1, h2, h3, h4, h5, h6 { 
-  font-family: 'Wednesday', Georgia, serif !important;
+  font-family: 'Wednesday', 'Bebas Neue', Georgia, serif !important;
   font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.1;
@@ -74,14 +75,15 @@ h1, h2, h3, h4, h5, h6 {
 /* Garantir em mobile também */
 @media (max-width: 1024px) {
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Wednesday', Georgia, serif !important;
+    font-family: 'Wednesday', 'Bebas Neue', Georgia, serif !important;
   }
 }
 
 /* Títulos específicos */
 .hero-title,
 .font-heading {
-  font-family: 'Wednesday', Georgia, serif !important;
+  font-family: 'Wednesday', 'Bebas Neue', Georgia, serif !important;
+  font-weight: 400;
 }
 
 body { 

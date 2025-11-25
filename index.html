@@ -7,10 +7,15 @@
     <meta name="theme-color" content="#B30000" />
     <title>Racionais Mc's — Site Oficial (TCC)</title>
 
-    <!-- Preload custom font Wednesday (place actual Wednesday.ttf in public/fonts/) -->
+    <!-- Google Fonts - Bold/Heavy weights para impacto similar a Wednesday -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Preload custom font Wednesday (fallback se existir) -->
     <link rel="preload" href="/fonts/Wednesday.ttf" as="font" type="font/ttf" crossorigin>
 
-    <!-- Inline font-face para garantir carregamento imediato em mobile -->
+    <!-- Inline font-face para Wednesday com fallback -->
     <style>
       @font-face {
         font-family: 'Wednesday';
