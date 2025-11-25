@@ -10,6 +10,17 @@
     <!-- Preload custom font Wednesday (place actual Wednesday.ttf in public/fonts/) -->
     <link rel="preload" href="/fonts/Wednesday.ttf" as="font" type="font/ttf" crossorigin>
 
+    <!-- Inline font-face para garantir carregamento imediato em mobile -->
+    <style>
+      @font-face {
+        font-family: 'Wednesday';
+        src: url('/fonts/Wednesday.ttf?v=1') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+
     <link rel="manifest" href="/manifest.webmanifest">
   </head>
   <body>

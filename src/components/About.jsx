@@ -190,68 +190,117 @@ export default function About(){
           ref={containerRef}
           className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-10 lg:gap-12"
         >
-          {historyItems.map((item, idx) => (
-            <motion.div
-              key={item.year}
-              className="history-item group cursor-default"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.8, delay: idx * 0.1 }}
-            >
-              <div className="relative h-full">
-                {/* Decoração de fundo */}
-                <div className="absolute inset-0 bg-gradient-to-br from-red/5 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                {/* Linha decorativa superior */}
-                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-red via-red/50 to-transparent opacity-40 group-hover:opacity-100 transition-opacity duration-500"></div>
+          {/* Mobile Timeline Layout */}
+          <div className="md:hidden col-span-1 flex flex-col gap-6 relative">
+            {/* Linha central timeline */}
+            <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-red via-red/40 to-transparent"></div>
 
-                {/* Conteúdo */}
-                <div className="relative p-4 sm:p-6 md:p-10 h-full flex flex-col">
-                  {/* Badge do ano */}
-                  <div className="mb-6 inline-flex">
-                    <div className="year-badge relative">
-                      <div className="absolute inset-0 bg-red rounded-full opacity-0 group-hover:opacity-20 blur-lg transition-all duration-500"></div>
-                      <div className="relative inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-red/60 group-hover:border-red transition-colors duration-300">
-                        <span className="text-red font-heading text-sm md:text-base font-bold">
-                          {item.year}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+            {historyItems.map((item, idx) => (
+              <motion.div
+                key={item.year}
+                className="history-item group cursor-default pl-16 relative"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+              >
+                {/* Ponto da timeline */}
+                <div className="absolute left-0 top-2 w-8 h-8 bg-black border-2 border-red rounded-full flex items-center justify-center">
+                  <div className="w-3 h-3 bg-red rounded-full shadow-lg shadow-red/60"></div>
+                </div>
 
-                  {/* Título */}
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-heading text-white-cream mb-3 md:mb-4 transition-colors duration-300 group-hover:text-red">
-                    {item.title}
-                  </h3>
-
-                  {/* Linha divisória */}
-                  <div className="w-12 h-1 bg-gradient-to-r from-red to-red/30 mb-6 rounded-full"></div>
-
-                  {/* Descrição */}
-                  <p className="text-white-cream/80 text-sm md:text-lg leading-relaxed font-light flex-grow">
-                    {item.text}
-                  </p>
-
-                  {/* Ícone de seta (decorativo) */}
-                  <div className="mt-6 inline-flex">
+                {/* Card compacto mobile */}
+                <div className="bg-gradient-to-br from-red/10 to-red/5 border border-red/30 rounded-lg p-4 hover:border-red/60 transition-all duration-300 hover:bg-red/15">
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <span className="text-red font-heading font-bold text-lg">{item.year}</span>
                     <button
                       onClick={() => setSelectedItem(item)}
-                      className="text-red/40 hover:text-red transition-colors duration-300 cursor-pointer hover:scale-110 transform transition-transform"
+                      className="text-red/50 hover:text-red transition-colors flex-shrink-0 mt-0.5"
                       aria-label={`Ver mais sobre ${item.title}`}
                     >
-                      <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7m0 0l-7 7m7-7H5" />
                       </svg>
                     </button>
                   </div>
+                  
+                  <h3 className="text-base font-heading text-white mb-2 leading-tight">
+                    {item.title}
+                  </h3>
+                  
+                  <p className="text-white/70 text-xs leading-relaxed">
+                    {item.text}
+                  </p>
                 </div>
+              </motion.div>
+            ))}
+          </div>
 
-                {/* Borda inferior sutil */}
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-            </motion.div>
-          ))}
+          {/* Desktop Grid Layout */}
+          <div className="hidden md:contents">
+            {historyItems.map((item, idx) => (
+              <motion.div
+                key={item.year}
+                className="history-item group cursor-default"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-100px' }}
+                transition={{ duration: 0.8, delay: idx * 0.1 }}
+              >
+                <div className="relative h-full">
+                  {/* Decoração de fundo */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-red/5 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Linha decorativa superior */}
+                  <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-red via-red/50 to-transparent opacity-40 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                  {/* Conteúdo */}
+                  <div className="relative p-4 sm:p-6 md:p-10 h-full flex flex-col">
+                    {/* Badge do ano */}
+                    <div className="mb-6 inline-flex">
+                      <div className="year-badge relative">
+                        <div className="absolute inset-0 bg-red rounded-full opacity-0 group-hover:opacity-20 blur-lg transition-all duration-500"></div>
+                        <div className="relative inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-red/60 group-hover:border-red transition-colors duration-300">
+                          <span className="text-red font-heading text-sm md:text-base font-bold">
+                            {item.year}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Título */}
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-heading text-white-cream mb-3 md:mb-4 transition-colors duration-300 group-hover:text-red">
+                      {item.title}
+                    </h3>
+
+                    {/* Linha divisória */}
+                    <div className="w-12 h-1 bg-gradient-to-r from-red to-red/30 mb-6 rounded-full"></div>
+
+                    {/* Descrição */}
+                    <p className="text-white-cream/80 text-sm md:text-lg leading-relaxed font-light flex-grow">
+                      {item.text}
+                    </p>
+
+                    {/* Ícone de seta (decorativo) */}
+                    <div className="mt-6 inline-flex">
+                      <button
+                        onClick={() => setSelectedItem(item)}
+                        className="text-red/40 hover:text-red transition-colors duration-300 cursor-pointer hover:scale-110 transform transition-transform"
+                        aria-label={`Ver mais sobre ${item.title}`}
+                      >
+                        <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7m0 0l-7 7m7-7H5" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Borda inferior sutil */}
+                  <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* Rodapé inspirador */}

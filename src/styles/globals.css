@@ -432,6 +432,13 @@ img {
   margin-top: 2rem;
 }
 
+@media (max-width: 640px) {
+  .gallery-masonry {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
 @media (min-width: 768px) {
   .gallery-masonry {
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -776,6 +783,42 @@ main, section, header, footer {
   section[id] {
     scroll-margin-top: 60px;
   }
+
+  /* Mobile section titles - smaller but bolder */
+  section[id] > .container > h2,
+  section[id] > div > .container > h2 {
+    font-size: 1.75rem !important;
+    line-height: 1.1;
+  }
+
+  /* Mobile descriptive text - more readable */
+  section[id] > .container > p,
+  section[id] > div > .container > p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Mobile cards - better spacing */
+  .show-card-inner,
+  .legacy-card,
+  .discography-card-inner {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .show-date-section {
+    border-right: none;
+    border-bottom: 1px solid rgba(179, 0, 0, 0.2);
+    padding-right: 0;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  /* Mobile video cards - single column */
+  .video-slide-wrapper {
+    flex: 0 0 100%;
+  }
 }
 
 /* ============================================
@@ -946,6 +989,22 @@ main, section, header, footer {
 .video-slide-visible {
   opacity: 1;
   transform: translateY(0) scale(1);
+}
+
+@media (max-width: 640px) {
+  .video-slider-nav {
+    display: none;
+  }
+  
+  .video-slide-wrapper {
+    flex: 0 0 100%;
+    min-width: 100%;
+    padding: 0 0.5rem;
+  }
+  
+  .video-slider-container {
+    padding: 0 0;
+  }
 }
 
 .video-slider-nav {

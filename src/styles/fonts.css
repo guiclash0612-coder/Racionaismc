@@ -1,9 +1,20 @@
 @font-face {
   font-family: 'Wednesday';
-  src: url('/fonts/Wednesday.ttf') format('truetype');
+  src: url('/fonts/Wednesday.ttf?v=1') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+}
+
+/* Garantir que a fonte Wednesday carregue corretamente */
+@supports (font-display: swap) {
+  @font-face {
+    font-family: 'Wednesday';
+    src: url('/fonts/Wednesday.ttf?v=1') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
 }
 
 :root {
@@ -52,10 +63,25 @@
 }
 
 h1, h2, h3, h4, h5, h6 { 
-  font-family: 'Wednesday', serif; 
+  font-family: 'Wednesday', Georgia, serif !important;
   font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Garantir em mobile também */
+@media (max-width: 1024px) {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Wednesday', Georgia, serif !important;
+  }
+}
+
+/* Títulos específicos */
+.hero-title,
+.font-heading {
+  font-family: 'Wednesday', Georgia, serif !important;
 }
 
 body { 

@@ -256,43 +256,99 @@ export default function Hero(){
 
       {/* Conteúdo principal */}
       <div className="hero-content z-10 text-center px-4 max-w-7xl mx-auto relative">
-        <h1 
-          ref={titleRef}
-          aria-label="Racionais MC's" 
-          className="hero-title text-[clamp(52px,11vw,160px)] md:text-[clamp(72px,14vw,200px)] font-heading leading-[0.85] text-red mb-8 relative tracking-tight"
-        >
-          Racionais MC's
-        </h1>
-        
-        <p 
-          ref={subtitleRef}
-          className="mt-8 text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white/95 max-w-4xl mx-auto font-light tracking-wider leading-relaxed"
-        >
-          O legado do rap nacional.
-        </p>
-        
-        <motion.button 
-          ref={buttonRef}
-          whileHover={{ scale: 1.05 }} 
-          whileTap={{ scale: 0.98 }}
-          onClick={handleExplore} 
-          className="btn-primary mt-12 relative overflow-hidden group"
-          aria-label="Explorar conteúdo"
-          data-magnetic
-        >
-          <span className="relative z-10">Explorar</span>
-          <span className="absolute inset-0 bg-gradient-to-r from-red-light via-red to-red-light opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-        </motion.button>
+        {/* Mobile layout - diferente e visual */}
+        <div className="md:hidden flex flex-col items-center justify-center gap-6 py-12">
+          {/* Título mobile - menor mas impactante */}
+          <h1 
+            ref={titleRef}
+            aria-label="Racionais MC's" 
+            className="hero-title text-5xl font-heading leading-[1.1] text-red tracking-tight drop-shadow-lg"
+          >
+            Racionais<br/>MC's
+          </h1>
+          
+          {/* Divisor visual mobile */}
+          <div className="flex items-center justify-center gap-4 w-full">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-red/50"></div>
+            <div className="w-3 h-3 bg-red rounded-full shadow-lg shadow-red/50"></div>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-red/50"></div>
+          </div>
 
-        {/* Scroll indicator premium */}
-        <div 
-          ref={scrollIndicatorRef}
-          className="mt-20 flex flex-col items-center justify-center gap-3 opacity-0" 
-          aria-hidden="true"
-        >
-          <span className="text-white/50 text-xs uppercase tracking-[0.2em] font-medium">Rolar para explorar</span>
-          <div className="w-6 h-12 border-2 border-red/40 rounded-full flex items-start justify-center p-2 backdrop-blur-sm">
-            <div className="w-1.5 h-1.5 bg-red rounded-full shadow-lg shadow-red/50"></div>
+          {/* Descrição mobile - mais compacta */}
+          <p 
+            ref={subtitleRef}
+            className="text-lg text-white/85 font-light leading-relaxed max-w-xs"
+          >
+            O legado da periferia.<br/>A voz da revolução.
+          </p>
+
+          {/* CTA Button mobile - maior e mais clicável */}
+          <motion.button 
+            ref={buttonRef}
+            whileHover={{ scale: 1.08 }} 
+            whileTap={{ scale: 0.95 }}
+            onClick={handleExplore} 
+            className="btn-primary mt-8 w-full sm:w-auto px-8 py-3 relative overflow-hidden group shadow-lg shadow-red/40"
+            aria-label="Explorar conteúdo"
+            data-magnetic
+          >
+            <span className="relative z-10 font-bold">Descobrir</span>
+            <span className="absolute inset-0 bg-gradient-to-r from-red-light via-red to-red-light opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          </motion.button>
+
+          {/* Scroll indicator mobile - mais visível */}
+          <div 
+            ref={scrollIndicatorRef}
+            className="mt-12 flex flex-col items-center justify-center gap-2 opacity-0" 
+            aria-hidden="true"
+          >
+            <span className="text-white/40 text-xs uppercase tracking-[0.15em] font-semibold">Scroll</span>
+            <svg className="w-5 h-5 text-red animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
+        </div>
+
+        {/* Desktop layout - original */}
+        <div className="hidden md:flex md:flex-col md:items-center md:justify-center md:gap-6">
+          <h1 
+            ref={titleRef}
+            aria-label="Racionais MC's" 
+            className="hero-title text-[clamp(72px,14vw,200px)] font-heading leading-[0.85] text-red relative tracking-tight"
+          >
+            Racionais MC's
+          </h1>
+          
+          <p 
+            ref={subtitleRef}
+            className="mt-8 text-2xl lg:text-3xl xl:text-4xl text-white/95 max-w-4xl mx-auto font-light tracking-wider leading-relaxed"
+          >
+            O legado do rap nacional.
+          </p>
+          
+          <motion.button 
+            ref={buttonRef}
+            whileHover={{ scale: 1.05 }} 
+            whileTap={{ scale: 0.98 }}
+            onClick={handleExplore} 
+            className="btn-primary mt-12 relative overflow-hidden group"
+            aria-label="Explorar conteúdo"
+            data-magnetic
+          >
+            <span className="relative z-10">Explorar</span>
+            <span className="absolute inset-0 bg-gradient-to-r from-red-light via-red to-red-light opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          </motion.button>
+
+          {/* Scroll indicator premium */}
+          <div 
+            ref={scrollIndicatorRef}
+            className="mt-20 flex flex-col items-center justify-center gap-3 opacity-0" 
+            aria-hidden="true"
+          >
+            <span className="text-white/50 text-xs uppercase tracking-[0.2em] font-medium">Rolar para explorar</span>
+            <div className="w-6 h-12 border-2 border-red/40 rounded-full flex items-start justify-center p-2 backdrop-blur-sm">
+              <div className="w-1.5 h-1.5 bg-red rounded-full shadow-lg shadow-red/50"></div>
+            </div>
           </div>
         </div>
       </div>
