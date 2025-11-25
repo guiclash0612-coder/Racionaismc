@@ -222,7 +222,7 @@ export default function Hero(){
     <section 
       id="hero" 
       ref={heroRef}
-      className="relative w-full h-screen flex items-center justify-center overflow-x-hidden grain-bg"
+      className="relative w-full min-h-screen md:h-screen flex items-center justify-center overflow-x-hidden grain-bg"
     >
       {/* Imagem de fundo hero1.jpeg com parallax */}
       <img 

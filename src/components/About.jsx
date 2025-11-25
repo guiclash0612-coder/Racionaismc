@@ -160,27 +160,27 @@ export default function About(){
     <section 
       id="about" 
       ref={sectionRef}
-      className="relative min-h-screen py-24 md:py-40 overflow-hidden bg-black"
+      className="relative min-h-auto md:min-h-screen py-24 md:py-40 overflow-hidden bg-black"
     >
       {/* Background com gradiente sutil */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-red/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-red/3 rounded-full blur-3xl"></div>
+        <div className="hidden md:block absolute top-0 left-1/4 w-96 h-96 bg-red/5 rounded-full blur-3xl"></div>
+        <div className="hidden md:block absolute bottom-0 right-1/4 w-96 h-96 bg-red/3 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container relative z-10 max-w-6xl mx-auto px-4 md:px-8">
         {/* Título principal */}
         <motion.div 
-          className="mb-20 md:mb-32"
+          className="mb-16 md:mb-32"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-heading text-red mb-4 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-heading text-red mb-3 md:mb-4 tracking-tight">
             A História
           </h2>
-          <p className="text-white-cream/70 text-lg md:text-xl font-light">
+          <p className="text-white-cream/70 text-base md:text-xl font-light">
             Uma jornada de resistência, voz e transformação social
           </p>
         </motion.div>
@@ -188,7 +188,7 @@ export default function About(){
         {/* Grid de itens da história */}
         <div 
           ref={containerRef}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-10 lg:gap-12"
         >
           {historyItems.map((item, idx) => (
             <motion.div
@@ -207,7 +207,7 @@ export default function About(){
                 <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-red via-red/50 to-transparent opacity-40 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                 {/* Conteúdo */}
-                <div className="relative p-8 md:p-10 h-full flex flex-col">
+                <div className="relative p-4 sm:p-6 md:p-10 h-full flex flex-col">
                   {/* Badge do ano */}
                   <div className="mb-6 inline-flex">
                     <div className="year-badge relative">
@@ -221,7 +221,7 @@ export default function About(){
                   </div>
 
                   {/* Título */}
-                  <h3 className="text-2xl md:text-3xl font-heading text-white-cream mb-4 transition-colors duration-300 group-hover:text-red">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-heading text-white-cream mb-3 md:mb-4 transition-colors duration-300 group-hover:text-red">
                     {item.title}
                   </h3>
 
@@ -229,7 +229,7 @@ export default function About(){
                   <div className="w-12 h-1 bg-gradient-to-r from-red to-red/30 mb-6 rounded-full"></div>
 
                   {/* Descrição */}
-                  <p className="text-white-cream/80 text-base md:text-lg leading-relaxed font-light flex-grow">
+                  <p className="text-white-cream/80 text-sm md:text-lg leading-relaxed font-light flex-grow">
                     {item.text}
                   </p>
 
@@ -289,7 +289,7 @@ export default function About(){
 
               {/* Modal */}
               <motion.div
-                className="relative bg-black border border-red/40 rounded-2xl overflow-hidden flex flex-col w-full max-w-2xl max-h-[80vh]"
+                className="relative bg-black border border-red/40 rounded-2xl overflow-hidden flex flex-col w-full max-w-2xl max-h-[85vh] md:max-h-[80vh]"
                 initial={{ opacity: 0, scale: 0.8, y: 50 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.8, y: 50 }}

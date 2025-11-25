@@ -6,5 +6,10 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #root { height: 100%; }
+/* Keep full-height layout only on medium+ screens. This prevents
+	 forcing a 100% height on mobile which can block natural scrolling. */
+@media (min-width: 768px) {
+	html, body, #root { height: 100%; }
+}
+
 body { @apply bg-black text-white; }

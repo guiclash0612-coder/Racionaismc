@@ -33,7 +33,7 @@ export default function CruzDecorative() {
       {cruzes.map(cruz => (
         <motion.div
           key={cruz.id}
-          className="fixed pointer-events-none"
+          className="hidden md:block fixed pointer-events-none"
           style={{
             top: cruz.top,
             [cruz.left !== undefined ? 'left' : 'right']: cruz.left !== undefined ? cruz.left : cruz.right,

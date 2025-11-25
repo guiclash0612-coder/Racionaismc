@@ -1,5 +1,0 @@
-<!-- Placeholder SVG hero image. Replace with a high-quality hero.jpg in public/assets/hero.jpg -->
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
-  <rect width="100%" height="100%" fill="#0b0b0b" />
-  <text x="50%" y="50%" fill="#8B0B0B" font-size="40" text-anchor="middle" dominant-baseline="middle">Hero Placeholder - replace public/assets/hero.jpg</text>
-</svg>
