@@ -1,0 +1,92 @@
+/* ============================================
+   MASCOT (Boombox Fixado - Racionais Style)
+   ============================================ */
+.mascot-fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 260px;
+  width: auto;
+  z-index: 100;
+  animation: float 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(179, 0, 0, 0.5)) 
+          drop-shadow(0 0 24px rgba(0, 0, 0, 0.8));
+  transition: filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: auto;
+  cursor: default;
+  border-radius: 12px;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.mascot-fixed:hover {
+  filter: drop-shadow(0 0 20px rgba(179, 0, 0, 0.8)) 
+          drop-shadow(0 0 40px rgba(179, 0, 0, 0.5))
+          drop-shadow(0 0 60px rgba(0, 0, 0, 0.9));
+  animation: float 4s ease-in-out infinite, glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px rgba(179, 0, 0, 0.8)) 
+            drop-shadow(0 0 40px rgba(179, 0, 0, 0.5))
+            drop-shadow(0 0 60px rgba(0, 0, 0, 0.9));
+  }
+  50% {
+    filter: drop-shadow(0 0 24px rgba(179, 0, 0, 1)) 
+            drop-shadow(0 0 50px rgba(179, 0, 0, 0.7))
+            drop-shadow(0 0 80px rgba(0, 0, 0, 1));
+  }
+}
+
+/* Mobile - Reduz tamanho */
+@media (max-width: 768px) {
+  .mascot-fixed {
+    height: 160px;
+    bottom: 10px;
+    right: 10px;
+    filter: drop-shadow(0 0 8px rgba(179, 0, 0, 0.4)) 
+            drop-shadow(0 0 16px rgba(0, 0, 0, 0.6));
+  }
+  
+  .mascot-fixed:hover {
+    transform: scale(1.03);
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .mascot-fixed {
+    height: 200px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+/* Esconder em telas muito pequenas */
+@media (max-width: 480px) {
+  .mascot-fixed {
+    height: 120px;
+    bottom: 8px;
+    right: 8px;
+  }
+}
+
+/* Garantir que não interfira com elementos importantes */
+@media (max-height: 600px) {
+  .mascot-fixed {
+    height: 140px;
+    bottom: 10px;
+  }
+}
+

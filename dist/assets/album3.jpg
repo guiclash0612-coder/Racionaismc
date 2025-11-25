@@ -1,0 +1,5 @@
+<!-- Placeholder album cover 3 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <rect width="100%" height="100%" fill="#0f0f0f" />
+  <text x="50%" y="50%" fill="#FFFFFF" font-size="24" text-anchor="middle" dominant-baseline="middle">Album 3</text>
+</svg>

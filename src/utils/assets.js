@@ -1,0 +1,39 @@
+const albums = [
+  { 
+    src: '/assets/Sobrevivendo no inferno.jpeg', 
+    title: 'Sobrevivendo no Inferno', 
+    year: 1997, 
+    description: 'Clássico que marcou gerações e se tornou referência do rap nacional.', 
+    tracks: ['Capítulo 4, Versículo 3', 'Diário de um Detento', 'Fórmula Mágica da Paz', 'Vida Loka', 'Mano Brown', 'Periferia é Periferia'], 
+    link: 'https://open.spotify.com' 
+  },
+  { 
+    src: '/assets/Nada como um dia após o outro.jpeg', 
+    title: 'Nada Como Um Dia Após o Outro Dia', 
+    year: 2002, 
+    description: 'Disco duplo que consolidou o legado do grupo na música brasileira.', 
+    tracks: ['Negro Drama', 'Vida Loka II', 'Jesus Chorou', 'Rapaz Comum', 'Fio da Navalha'], 
+    link: 'https://open.spotify.com' 
+  },
+  { 
+    src: '/assets/Cores e valores (Coletanea).jpeg', 
+    title: 'Cores e Valores', 
+    year: 2014, 
+    description: 'Coletânea que reúne os maiores sucessos do grupo.', 
+    tracks: ['Vida Loka', 'Negro Drama', 'Diário de um Detento', 'Fórmula Mágica da Paz'], 
+    link: 'https://open.spotify.com' 
+  }
+]
+
+const photos = [
+  '/assets/gallery-01.jpg',
+  '/assets/gallery-02.jpg',
+  '/assets/gallery-03.jpg',
+  '/assets/gallery-04.jpg',
+  '/assets/gallery-05.jpg',
+  '/assets/gallery-07.jpg',
+  '/assets/gallery-08.jpg',
+  '/assets/hero1.jpeg'
+]
+
+export default { albums, photos }
